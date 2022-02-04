@@ -1,0 +1,11 @@
+D:\Proyectos\Farmacia\Pfizer\Controlador\bin\Debug\Controlador.dll
+D:\Proyectos\Farmacia\Pfizer\Controlador\bin\Debug\Controlador.pdb
+D:\Proyectos\Farmacia\Pfizer\Controlador\bin\Debug\Dapper.dll
+D:\Proyectos\Farmacia\Pfizer\Controlador\bin\Debug\Entidades.dll
+D:\Proyectos\Farmacia\Pfizer\Controlador\bin\Debug\Entidades.pdb
+D:\Proyectos\Farmacia\Pfizer\Controlador\bin\Debug\Dapper.xml
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.dll
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.pdb

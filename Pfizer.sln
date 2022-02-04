@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pfizer", "Pfizer\Pfizer.csproj", "{D57CEFCD-7879-4A46-98AA-F713A8B06B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{C84C6700-CCDD-4E93-857D-7E4D263D5429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controlador", "Controlador\Controlador.csproj", "{8927E989-4368-4935-929E-AB767969F4C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D57CEFCD-7879-4A46-98AA-F713A8B06B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57CEFCD-7879-4A46-98AA-F713A8B06B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57CEFCD-7879-4A46-98AA-F713A8B06B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57CEFCD-7879-4A46-98AA-F713A8B06B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84C6700-CCDD-4E93-857D-7E4D263D5429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84C6700-CCDD-4E93-857D-7E4D263D5429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84C6700-CCDD-4E93-857D-7E4D263D5429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84C6700-CCDD-4E93-857D-7E4D263D5429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8927E989-4368-4935-929E-AB767969F4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8927E989-4368-4935-929E-AB767969F4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8927E989-4368-4935-929E-AB767969F4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8927E989-4368-4935-929E-AB767969F4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4537B55A-1D74-4D97-A153-007DD65EFADC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Pfizer.exe.config
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Pfizer.exe
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Pfizer.pdb
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Controlador.dll
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Entidades.dll
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Dapper.dll
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Controlador.pdb
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Entidades.pdb
+D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\Dapper.xml
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.csproj.AssemblyReference.cache
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Login.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Properties.Resources.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.csproj.GenerateResource.cache
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.csproj.CoreCompileInputs.cache
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.csproj.CopyComplete
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.exe
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.pdb
