@@ -8,6 +8,6 @@ namespace Controlador
 {
     public class conexion
     {
-        public static string Conexion = @"data source = AMILCAR\AMILCAR; initial catalog = JeanneBD; persist security info = True; integrated Security = False; user id = 'sa';password='123'; packet size= 4096; Pooling=true; Max Pool Size=10;";
+        public static string Conexion = @"data source = AMILCAR\AMILCAR; initial catalog = dbPfizer; persist security info = True; integrated Security = False; user id = 'super';password='123'; packet size= 4096; Pooling=true; Max Pool Size=10;";
     }
 }

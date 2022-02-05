@@ -15,26 +15,20 @@ namespace Controlador
         public static Usuario Login(string usuario, string pasword)
         {
             List<Usuario> user = new List<Usuario>();
-            try
-            {
+
                 using (IDbConnection db = new
                     SqlConnection(conexion.Conexion))
                 {
                     var parametros = new DynamicParameters();
 
                     parametros.Add("@usuario", usuario);
-                    parametros.Add("@pasword", pasword);
+                    parametros.Add("@password", pasword);
 
                     user = db.Query<Usuario>(
                         "spu_Login", parametros, commandType: CommandType.StoredProcedure).ToList();
                 }
                 return user[0];
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
         }
     }
 }

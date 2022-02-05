@@ -23,13 +23,16 @@ namespace Pfizer
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            currentUsuario = CUsuario.Login(txtUsuario.Text, txtPassword.Text);
-            if (currentUsuario != null)
-            {
-                this.Hide();
-                Home home = new Home();
-                home.Show();
-            }
+ 
+                currentUsuario = CUsuario.Login(txtUsuario.Text, txtPassword.Text);
+                if (currentUsuario != null)
+                {
+                    this.Hide();
+                    Home home = new Home(currentUsuario);
+                    home.Show();
+                }
+            
+            
 
         }
     }
