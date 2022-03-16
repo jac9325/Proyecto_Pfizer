@@ -16,3 +16,15 @@ D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.csproj.CopyComplete
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.exe
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.pdb
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Home.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Users.IUUsuario.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Category.IUCategoria.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Configuracion_productos.IUConfiguracion.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Almacen.LotesBuscar.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Almacen.IUIngresoAlmacen.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Almacen.ProductosAlmacen.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.stock.IUStockProducto.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Ingresos.IUIngresosAlmacen.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Users.IUPermisos.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Caja.CajaAdmin.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Cajas.IUCaja.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Cajas.formIniciarCaja.resources

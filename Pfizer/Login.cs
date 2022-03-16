@@ -15,7 +15,7 @@ namespace Pfizer
     public partial class Login : Form
     {
         Usuario currentUsuario = new Usuario();
-        CUsuario currentCUsuario = new CUsuario();
+        Permisos currentpermisos= new Permisos();
         public Login()
         {
             InitializeComponent();
@@ -23,17 +23,22 @@ namespace Pfizer
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
- 
+            try
+            {
                 currentUsuario = CUsuario.Login(txtUsuario.Text, txtPassword.Text);
                 if (currentUsuario != null)
                 {
+                    currentpermisos = Controlador.CUsuario.getPermisos(currentUsuario.idUsuario);
                     this.Hide();
-                    Home home = new Home(currentUsuario);
+                    Home home = new Home(currentUsuario, currentpermisos);
                     home.Show();
                 }
-            
-            
+            }
+            catch (Exception)
+            {
 
+                MessageBox.Show("Usted no tiene permiso para ingresar");
+            }                     
         }
     }
 }

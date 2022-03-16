@@ -44,7 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCaja.cs" />
+    <Compile Include="CCategoria.cs" />
+    <Compile Include="CIngresoAlmacen.cs" />
+    <Compile Include="CLaboratorio.cs" />
+    <Compile Include="CLote.cs" />
+    <Compile Include="CMarca.cs" />
     <Compile Include="conexion.cs" />
+    <Compile Include="CPresentacion.cs" />
+    <Compile Include="CProducto.cs" />
+    <Compile Include="CStockProducto.cs" />
     <Compile Include="CUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="COMSVCSLib">
+      <Guid>{2A005C00-A5DE-11CF-9E66-00AA00A3F464}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,3 +9,5 @@ D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.csproj.CoreCompil
 D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.csproj.CopyComplete
 D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.dll
 D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.pdb
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Interop.COMSVCSLib.dll
+D:\Proyectos\Farmacia\Pfizer\Controlador\obj\Debug\Controlador.csproj.ResolveComReference.cache

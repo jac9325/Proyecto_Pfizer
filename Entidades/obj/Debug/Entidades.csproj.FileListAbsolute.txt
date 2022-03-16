@@ -1,6 +1,5 @@
 D:\Proyectos\Farmacia\Pfizer\Entidades\bin\Debug\Entidades.dll
 D:\Proyectos\Farmacia\Pfizer\Entidades\bin\Debug\Entidades.pdb
-D:\Proyectos\Farmacia\Pfizer\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
 D:\Proyectos\Farmacia\Pfizer\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Proyectos\Farmacia\Pfizer\Entidades\obj\Debug\Entidades.dll
 D:\Proyectos\Farmacia\Pfizer\Entidades\obj\Debug\Entidades.pdb
