@@ -21,6 +21,8 @@ namespace Entidades
         public string ubicacion { get; set; }
         public string informacionAdicional { get; set; }
         public int estado { get; set; }
+        public int idProductoHijo { get; set; }
+        public int cantidad { get; set; }
 
     }
 }

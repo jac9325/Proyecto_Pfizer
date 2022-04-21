@@ -122,6 +122,7 @@ namespace Pfizer.Configuracion_productos
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnProductosHijos = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
@@ -165,6 +166,7 @@ namespace Pfizer.Configuracion_productos
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblProducto = new System.Windows.Forms.Label();
             this.tbConfiguracion.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1211,6 +1213,8 @@ namespace Pfizer.Configuracion_productos
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblProducto);
+            this.tabPage1.Controls.Add(this.btnProductosHijos);
             this.tabPage1.Controls.Add(this.btnEliminarProducto);
             this.tabPage1.Controls.Add(this.btnNuevoProducto);
             this.tabPage1.Controls.Add(this.txtCodigoProducto);
@@ -1245,6 +1249,19 @@ namespace Pfizer.Configuracion_productos
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Productos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnProductosHijos
+            // 
+            this.btnProductosHijos.BackColor = System.Drawing.Color.LightSalmon;
+            this.btnProductosHijos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProductosHijos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosHijos.Location = new System.Drawing.Point(170, 290);
+            this.btnProductosHijos.Name = "btnProductosHijos";
+            this.btnProductosHijos.Size = new System.Drawing.Size(110, 31);
+            this.btnProductosHijos.TabIndex = 20;
+            this.btnProductosHijos.Text = "Producto";
+            this.btnProductosHijos.UseVisualStyleBackColor = false;
+            this.btnProductosHijos.Click += new System.EventHandler(this.btnProductosHijos_Click);
             // 
             // btnEliminarProducto
             // 
@@ -1344,6 +1361,7 @@ namespace Pfizer.Configuracion_productos
             this.chkFraccion.Name = "chkFraccion";
             this.chkFraccion.Size = new System.Drawing.Size(20, 20);
             this.chkFraccion.TabIndex = 11;
+            this.chkFraccion.OnChange += new System.EventHandler(this.chkFraccion_OnChange);
             // 
             // label24
             // 
@@ -1533,13 +1551,13 @@ namespace Pfizer.Configuracion_productos
             this.informacionAdicionalDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn2});
             this.dgvProductos.DataSource = this.ProductoBindingSource;
-            this.dgvProductos.Location = new System.Drawing.Point(14, 350);
+            this.dgvProductos.Location = new System.Drawing.Point(14, 362);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1312, 222);
+            this.dgvProductos.Size = new System.Drawing.Size(1312, 210);
             this.dgvProductos.TabIndex = 2;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -1688,6 +1706,16 @@ namespace Pfizer.Configuracion_productos
             this.label1.Size = new System.Drawing.Size(272, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "CONFIGURACIÓN ";
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(168, 331);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(76, 20);
+            this.lblProducto.TabIndex = 21;
+            this.lblProducto.Text = "Producto";
             // 
             // IUConfiguracion
             // 
@@ -1876,5 +1904,7 @@ namespace Pfizer.Configuracion_productos
         private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.Label lblEncabezado;
         private System.Windows.Forms.Button btnEliminarProducto;
+        private System.Windows.Forms.Button btnProductosHijos;
+        private System.Windows.Forms.Label lblProducto;
     }
 }

@@ -72,7 +72,19 @@ namespace Controlador
             {
                 detail.idIngresoAlmacen = ingresoAlmacen.idIngresoAlmacen;
                 Add_detail(detail);
+                saveLoteProducto(ingresoAlmacen.idLote, detail.idProducto,detail.cantidad);
             }
+        }
+        public static void saveLoteProducto(int idLote, int idProducto, int cantidad)
+        {
+            //armar el producto
+            LoteProducto lote = new LoteProducto();
+            lote.idLote = idLote;
+            lote.idProducto = idProducto;
+            lote.cantidad = cantidad;
+
+            /*      Guardamos registro      */
+            Controlador.CLote.Add_lote_producto(lote);
         }
 
         public static List<IngresoAlmacen> List_Ingresos()

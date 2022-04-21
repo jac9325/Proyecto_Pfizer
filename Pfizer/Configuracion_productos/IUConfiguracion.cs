@@ -29,6 +29,8 @@ namespace Pfizer.Configuracion_productos
         public Laboratorio currentLaboratorio = new Laboratorio();
         public Lote currentLote = new Lote();
         public Producto currentProducto = new Producto();
+        public Producto productoFraccion = new Producto();
+        public int cantidadFraccion = 0;
 
         public List<Categoria> listCategory = new List<Categoria>();
         public List<Presentacion> listPresentacion = new List<Presentacion>();
@@ -468,7 +470,16 @@ namespace Pfizer.Configuracion_productos
                             product.recomendacion = txtRecomendacionProducto.Text;
                             product.ubicacion = txtUbicacionProducto.Text;
                             product.informacionAdicional = txtInformacionProducto.Text;
-
+                            if (chkFraccion.Checked)
+                            {
+                                product.cantidad = cantidadFraccion;
+                                product.idProductoHijo = productoFraccion.idProducto;
+                            }
+                            else
+                            {
+                                product.cantidad = 0;
+                                product.idProductoHijo = 0;
+                            }
                             string id = Controlador.CProducto.Insert_producto(product);
                             MessageBox.Show("Se ha guardado correctamente");
                             cleanFieldsProducts();
@@ -498,6 +509,11 @@ namespace Pfizer.Configuracion_productos
                             currentProducto.recomendacion = txtRecomendacionProducto.Text;
                             currentProducto.ubicacion = txtUbicacionProducto.Text;
                             currentProducto.informacionAdicional = txtInformacionProducto.Text;
+                            if (chkFraccion.Checked)
+                            {
+                                currentProducto.idProductoHijo = productoFraccion.idProducto;
+                                currentProducto.cantidad = cantidadFraccion;
+                            }
 
                             string id = Controlador.CProducto.Update_Producto(currentProducto);
                             MessageBox.Show("Se ha editado correctamente");
@@ -556,10 +572,18 @@ namespace Pfizer.Configuracion_productos
                     txtRecomendacionProducto.Text = currentProducto.recomendacion;
                     txtUbicacionProducto.Text = currentProducto.ubicacion;
                     txtInformacionProducto.Text = currentProducto.informacionAdicional;
-                    lblEncabezado.Text = "(Editando producto " + currentProducto.idProducto.ToString()+")"; 
+                    lblEncabezado.Text = "(Editando producto " + currentProducto.idProducto.ToString() + ")";
                     isNewProducts = false;
 
-
+                    if (currentProducto.idProductoHijo == 0)
+                    {
+                        lblProducto.Text = "No es fraccionable";
+                    }
+                    else
+                    {
+                        productoFraccion = listProducto.Find(x => x.idProducto == currentProducto.idProductoHijo);
+                        lblProducto.Text = productoFraccion.nombre;
+                    }                   
                 }
             }
             catch (Exception)
@@ -604,6 +628,40 @@ namespace Pfizer.Configuracion_productos
             {
 
                 throw;
+            }
+        }
+
+        private void btnProductosHijos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProductosFraccion form = new ProductosFraccion();
+                form.ShowDialog();
+                if (form.currentProducto != null)
+                {
+                    productoFraccion = form.currentProducto;
+                    lblProducto.Text = form.currentProducto.nombre;
+                    cantidadFraccion = form.cantidad;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void chkFraccion_OnChange(object sender, EventArgs e)
+        {
+            if (chkFraccion.Checked)
+            {
+                btnProductosHijos.Enabled = true;
+            }
+            else
+            {
+                btnProductosHijos.Enabled = false;
+                lblProducto.Text = "No es fraccionable";
             }
         }
     }

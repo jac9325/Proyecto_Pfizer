@@ -33,5 +33,27 @@ namespace Controlador
                 throw;
             }
         }
+        public static List<StockProductos> stockProductos_like(string texto)
+        {
+            List<StockProductos> list = new List<StockProductos>();
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@texto",value:texto);
+
+                    list = db.Query<StockProductos>(
+                        "spuSearch_stock_precio", parametros, commandType: CommandType.StoredProcedure).ToList(); ;
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

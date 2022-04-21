@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using Entidades;
+using System.Transactions;
 
 namespace Controlador
 {

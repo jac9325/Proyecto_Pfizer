@@ -81,6 +81,12 @@
     <Compile Include="Cajas\formIniciarCaja.Designer.cs">
       <DependentUpon>formIniciarCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cajas\IUArquearCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cajas\IUArquearCaja.Designer.cs">
+      <DependentUpon>IUArquearCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cajas\IUCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,11 +99,23 @@
     <Compile Include="Category\IUCategoria.Designer.cs">
       <DependentUpon>IUCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientes\ClientesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\ClientesVentas.Designer.cs">
+      <DependentUpon>ClientesVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion_productos\IUConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Configuracion_productos\IUConfiguracion.Designer.cs">
       <DependentUpon>IUConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion_productos\ProductosFraccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion_productos\ProductosFraccion.Designer.cs">
+      <DependentUpon>ProductosFraccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -105,11 +123,23 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ingresos\IUEgresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingresos\IUEgresos.Designer.cs">
+      <DependentUpon>IUEgresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ingresos\IUIngresosAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ingresos\IUIngresosAlmacen.Designer.cs">
       <DependentUpon>IUIngresosAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IUHomeProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IUHomeProductos.Designer.cs">
+      <DependentUpon>IUHomeProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -137,6 +167,18 @@
     <Compile Include="Users\IUUsuario.Designer.cs">
       <DependentUpon>IUUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\IUVentaRapida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\IUVentaRapida.Designer.cs">
+      <DependentUpon>IUVentaRapida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\IUVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\IUVentas.Designer.cs">
+      <DependentUpon>IUVentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Almacen\IUIngresoAlmacen.resx">
       <DependentUpon>IUIngresoAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,20 +194,35 @@
     <EmbeddedResource Include="Cajas\formIniciarCaja.resx">
       <DependentUpon>formIniciarCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cajas\IUArquearCaja.resx">
+      <DependentUpon>IUArquearCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cajas\IUCaja.resx">
       <DependentUpon>IUCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category\IUCategoria.resx">
       <DependentUpon>IUCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\ClientesVentas.resx">
+      <DependentUpon>ClientesVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion_productos\IUConfiguracion.resx">
       <DependentUpon>IUConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion_productos\ProductosFraccion.resx">
+      <DependentUpon>ProductosFraccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ingresos\IUEgresos.resx">
+      <DependentUpon>IUEgresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ingresos\IUIngresosAlmacen.resx">
       <DependentUpon>IUIngresosAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IUHomeProductos.resx">
+      <DependentUpon>IUHomeProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -189,11 +246,21 @@
     <EmbeddedResource Include="Users\IUUsuario.resx">
       <DependentUpon>IUUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\IUVentaRapida.resx">
+      <DependentUpon>IUVentaRapida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\IUVentas.resx">
+      <DependentUpon>IUVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Entidades.Caja.datasource" />
     <None Include="Properties\DataSources\Entidades.CajaSesion.datasource" />
     <None Include="Properties\DataSources\Entidades.Categoria.datasource" />
+    <None Include="Properties\DataSources\Entidades.Clientes.datasource" />
     <None Include="Properties\DataSources\Entidades.DetalleIngresoAlmacen.datasource" />
+    <None Include="Properties\DataSources\Entidades.DetalleVenta.datasource" />
+    <None Include="Properties\DataSources\Entidades.Egresos.datasource" />
     <None Include="Properties\DataSources\Entidades.IngresoAlmacen.datasource" />
+    <None Include="Properties\DataSources\Entidades.Ingresos.datasource" />
     <None Include="Properties\DataSources\Entidades.Laboratorio.datasource" />
     <None Include="Properties\DataSources\Entidades.Lote.datasource" />
     <None Include="Properties\DataSources\Entidades.Marca.datasource" />
@@ -202,6 +269,7 @@
     <None Include="Properties\DataSources\Entidades.Producto.datasource" />
     <None Include="Properties\DataSources\Entidades.StockPrecioAlmacen.datasource" />
     <None Include="Properties\DataSources\Entidades.StockProductos.datasource" />
+    <None Include="Properties\DataSources\Entidades.TipoDocumento.datasource" />
     <None Include="Properties\DataSources\Entidades.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,6 +299,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono-buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mascara.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

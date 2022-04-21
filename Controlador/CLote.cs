@@ -30,6 +30,20 @@ namespace Controlador
                 return lote;
             }
         }
+        public static void Add_lote_producto(LoteProducto lote)
+        {
+            using (IDbConnection db = new
+                   SqlConnection(conexion.Conexion))
+            {
+                //using dinamic parameter
+                var parameters = new DynamicParameters();
+                parameters.Add("@idLote", value: lote.idLote);
+                parameters.Add("@idProducto", value: lote.idProducto);
+                parameters.Add("@cantidad", value: lote.cantidad);
+
+                var id = db.Execute("spuInsertLote", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
         public static Lote getLote(int idlote)
         {
             List<Lote> lote = new List<Lote>();
@@ -45,6 +59,52 @@ namespace Controlador
                         "spuGetLote", parametros, commandType: CommandType.StoredProcedure).ToList();
                 }
                 return lote[0];
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static List<LoteProducto> getLoteProducto(int idProducto)
+        {
+            List<LoteProducto> lote = new List<LoteProducto>();
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@idProducto", idProducto);
+
+                    lote = db.Query<LoteProducto>(
+                        "spuGetLotes_productos_by_producto", parametros, commandType: CommandType.StoredProcedure).ToList();
+                }
+                return lote;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public static void descontarLote(int idProducto,int idLote, int cantidad)
+        {
+            List<LoteProducto> lote = new List<LoteProducto>();
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@idLote", idLote);
+                    parametros.Add("@idProducto", idProducto);
+                    parametros.Add("@cantidad", cantidad);
+
+                    lote = db.Query<LoteProducto>(
+                        "spuEdit_loteproducto", parametros, commandType: CommandType.StoredProcedure).ToList();
+                }
             }
             catch (Exception)
             {

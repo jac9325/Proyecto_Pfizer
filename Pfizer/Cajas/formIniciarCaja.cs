@@ -16,6 +16,7 @@ namespace Pfizer.Cajas
         Entidades.Caja currentCaja = new Entidades.Caja();
         CajaSesion currentSesion = new CajaSesion();
         public bool Iniciar = true;
+
         public formIniciarCaja(Entidades.Caja caja)
         {
             this.currentCaja = caja;
@@ -33,17 +34,13 @@ namespace Pfizer.Cajas
 
         private void formIniciarCaja_Load(object sender, EventArgs e)
         {
-            if (Iniciar)
-            {
-                lblmontofecha.Hide();
-                txtMontoFinal.Hide();
-            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             currentSesion.idCaja = currentCaja.idCaja;
-            currentSesion.fechaCierre = dtpCierre.Value;
+            currentSesion.fechaCierre = dtpInicio.Value;
             currentSesion.fechaInicio = dtpInicio.Value;
             currentSesion.montoInicio = Convert.ToDouble(txtMontoInicio.Text);
 

@@ -32,6 +32,8 @@ namespace Controlador
                     parametros.Add("@recomendacion", prroducto.recomendacion);
                     parametros.Add("@ubicacion", prroducto.ubicacion);
                     parametros.Add("@informacionAdicional", prroducto.informacionAdicional);
+                    parametros.Add("@cantidad", prroducto.cantidad);
+                    parametros.Add("@idProductoHijo", prroducto.idProductoHijo);
 
                     var insert = db.Query<Producto>(
                         "spuInsertar_productos", parametros, commandType: CommandType.StoredProcedure);
@@ -134,6 +136,8 @@ namespace Controlador
                     parametros.Add("@recomendacion", producto.recomendacion);
                     parametros.Add("@ubicacion", producto.ubicacion);
                     parametros.Add("@informacionAdicional", producto.informacionAdicional);
+                    parametros.Add("@cantidad", producto.cantidad);
+                    parametros.Add("@idProductoHijo", producto.idProductoHijo);
 
 
                     var insert = db.Query<Producto>(

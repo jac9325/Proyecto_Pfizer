@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,9 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CArqueos.cs" />
     <Compile Include="CCaja.cs" />
     <Compile Include="CCategoria.cs" />
+    <Compile Include="CCliente.cs" />
+    <Compile Include="CEgreso.cs" />
     <Compile Include="CIngresoAlmacen.cs" />
+    <Compile Include="CIngresos.cs" />
     <Compile Include="CLaboratorio.cs" />
     <Compile Include="CLote.cs" />
     <Compile Include="CMarca.cs" />
@@ -54,7 +59,9 @@
     <Compile Include="CPresentacion.cs" />
     <Compile Include="CProducto.cs" />
     <Compile Include="CStockProducto.cs" />
+    <Compile Include="CTipoDocumento.cs" />
     <Compile Include="CUsuario.cs" />
+    <Compile Include="CVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

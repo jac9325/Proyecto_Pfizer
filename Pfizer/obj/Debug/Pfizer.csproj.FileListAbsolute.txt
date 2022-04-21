@@ -28,3 +28,11 @@ D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Users.IUPermisos.resources
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Caja.CajaAdmin.resources
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Cajas.IUCaja.resources
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Cajas.formIniciarCaja.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.IUHomeProductos.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Ventas.IUVentaRapida.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Ventas.IUVentas.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Configuracion_productos.ProductosFraccion.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Clientes.ClientesVentas.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.csproj.SuggestedBindingRedirects.cache
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Ingresos.IUEgresos.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Cajas.IUArquearCaja.resources
