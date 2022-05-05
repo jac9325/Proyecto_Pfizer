@@ -38,6 +38,7 @@ namespace Pfizer.Configuracion_productos
         public List<Lote> listCLote = new List<Lote>();
         public List<Laboratorio> listLaboratorio = new List<Laboratorio>();
         public List<Producto> listProducto = new List<Producto>();
+        public List<Lote> listLote = new List<Lote>();
 
         public IUConfiguracion()
         {
@@ -141,6 +142,21 @@ namespace Pfizer.Configuracion_productos
             GetListMarca();
             GetListLaboratorio();
             GetListProducts();
+            GetListLote();
+        }
+        public void GetListLote()
+        {
+            try
+            {
+                listLote = Controlador.CLote.List_lotes();
+                LotesBindingSource.DataSource = null;
+                LotesBindingSource.DataSource = listLote;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public void GetListCatergory()
         {

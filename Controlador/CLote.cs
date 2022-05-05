@@ -112,5 +112,27 @@ namespace Controlador
                 throw;
             }
         }
+
+        public static List<Lote> List_lotes()
+        {
+            List<Lote> listLotes = new List<Lote>();
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+
+                    listLotes = db.Query<Lote>(
+                        "spuListar_Lotes", commandType: CommandType.StoredProcedure).ToList();
+                }
+                return listLotes;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
