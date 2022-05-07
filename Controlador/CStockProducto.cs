@@ -33,6 +33,28 @@ namespace Controlador
                 throw;
             }
         }
+        public static StockProductos Stock_by_producto(int idProducto)
+        {
+            List<StockProductos> list = new List<StockProductos>();
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@idProducto", value: idProducto);
+
+                    list = db.Query<StockProductos>(
+                        "spuList_Stock_Producto", parametros,commandType: CommandType.StoredProcedure).ToList(); ;
+                }
+                return list[0];
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public static List<StockProductos> stockProductos_like(string texto)
         {
             List<StockProductos> list = new List<StockProductos>();

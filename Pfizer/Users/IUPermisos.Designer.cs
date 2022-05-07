@@ -52,11 +52,12 @@ namespace Pfizer.Users
             this.chkCompra.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.chkCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCompra.ForeColor = System.Drawing.Color.White;
-            this.chkCompra.Location = new System.Drawing.Point(59, 103);
+            this.chkCompra.Location = new System.Drawing.Point(152, 241);
             this.chkCompra.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.chkCompra.Name = "chkCompra";
             this.chkCompra.Size = new System.Drawing.Size(20, 20);
             this.chkCompra.TabIndex = 0;
+            this.chkCompra.Visible = false;
             this.chkCompra.OnChange += new System.EventHandler(this.chkCompra_OnChange);
             // 
             // chkVenta
@@ -79,11 +80,12 @@ namespace Pfizer.Users
             this.chkCaja.Checked = true;
             this.chkCaja.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.chkCaja.ForeColor = System.Drawing.Color.White;
-            this.chkCaja.Location = new System.Drawing.Point(59, 204);
+            this.chkCaja.Location = new System.Drawing.Point(56, 241);
             this.chkCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkCaja.Name = "chkCaja";
             this.chkCaja.Size = new System.Drawing.Size(20, 20);
             this.chkCaja.TabIndex = 2;
+            this.chkCaja.Visible = false;
             // 
             // chkAlmacen
             // 
@@ -92,7 +94,7 @@ namespace Pfizer.Users
             this.chkAlmacen.Checked = true;
             this.chkAlmacen.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.chkAlmacen.ForeColor = System.Drawing.Color.White;
-            this.chkAlmacen.Location = new System.Drawing.Point(59, 251);
+            this.chkAlmacen.Location = new System.Drawing.Point(59, 198);
             this.chkAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkAlmacen.Name = "chkAlmacen";
             this.chkAlmacen.Size = new System.Drawing.Size(20, 20);
@@ -122,17 +124,18 @@ namespace Pfizer.Users
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(103, 204);
+            this.label34.Location = new System.Drawing.Point(75, 241);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(53, 25);
             this.label34.TabIndex = 4;
             this.label34.Text = "Caja";
+            this.label34.Visible = false;
             // 
             // chkA
             // 
             this.chkA.AutoSize = true;
             this.chkA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkA.Location = new System.Drawing.Point(103, 246);
+            this.chkA.Location = new System.Drawing.Point(103, 193);
             this.chkA.Name = "chkA";
             this.chkA.Size = new System.Drawing.Size(89, 25);
             this.chkA.TabIndex = 4;
@@ -142,30 +145,41 @@ namespace Pfizer.Users
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(103, 103);
+            this.label3.Location = new System.Drawing.Point(188, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Compra";
+            this.label3.Visible = false;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(22, 347);
+            this.btnGuardar.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Location = new System.Drawing.Point(22, 278);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(106, 50);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(161, 347);
+            this.btnCancelar.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(161, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 50);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // chkAdmin
@@ -175,7 +189,7 @@ namespace Pfizer.Users
             this.chkAdmin.Checked = true;
             this.chkAdmin.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.chkAdmin.ForeColor = System.Drawing.Color.White;
-            this.chkAdmin.Location = new System.Drawing.Point(59, 294);
+            this.chkAdmin.Location = new System.Drawing.Point(59, 105);
             this.chkAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkAdmin.Name = "chkAdmin";
             this.chkAdmin.Size = new System.Drawing.Size(20, 20);
@@ -186,7 +200,7 @@ namespace Pfizer.Users
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(103, 289);
+            this.label4.Location = new System.Drawing.Point(103, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 25);
             this.label4.TabIndex = 4;
@@ -196,7 +210,7 @@ namespace Pfizer.Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 425);
+            this.ClientSize = new System.Drawing.Size(318, 360);
             this.Controls.Add(this.chkAdmin);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

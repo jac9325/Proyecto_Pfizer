@@ -680,5 +680,230 @@ namespace Pfizer.Configuracion_productos
                 lblProducto.Text = "No es fraccionable";
             }
         }
+
+        private void dgvLaboratorios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvLaboratorios.Rows.Count <= 0)
+                {
+                    return;
+                }
+                else
+                {
+                    int idLaboratorio = Convert.ToInt32(dgvLaboratorios.CurrentRow.Cells[0].Value);
+                    currentLaboratorio = listLaboratorio.Find(x => x.idLaboratorio == idLaboratorio);
+                    txtNameLaboratorio.Text = currentLaboratorio.nombre;
+                    txtDescriptionLaboratorio.Text = currentLaboratorio.descripcion;
+                    isNewLaboratorio = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnNuevoLaboratorio_Click(object sender, EventArgs e)
+        {
+            this.isNewLaboratorio = true;
+            txtNameLaboratorio.Text = String.Empty;
+            txtDescriptionLaboratorio.Text = String.Empty;
+        }
+
+        private void btnGuardarLaboratorio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (isNewLaboratorio)
+                {
+                    if (txtNameLaboratorio.Text == String.Empty || txtDescriptionLaboratorio.Text == String.Empty)
+                    {
+                        MessageBox.Show("Hay campos vacios","Pfizer - Laboratorio",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    Laboratorio newLaboratorio = new Laboratorio();
+                    newLaboratorio.nombre = txtNameLaboratorio.Text;
+                    newLaboratorio.descripcion = txtDescriptionLaboratorio.Text;
+
+                    DialogResult result = MessageBox.Show("¿Esta seguro de guardar?", "Pfizer - Laboratorio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        string response = Controlador.CLaboratorio.Add_laboratorio(newLaboratorio);
+                        MessageBox.Show(response, "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetListLaboratorio();
+                        txtNameLaboratorio.Text = String.Empty;
+                        txtDescriptionLaboratorio.Text = String.Empty;
+
+                    }
+                    else {
+                        return;
+                    }
+                }
+                else
+                {
+                    if (txtNameLaboratorio.Text == String.Empty || txtDescriptionLaboratorio.Text == String.Empty)
+                    {
+                        MessageBox.Show("Hay campos vacios", "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    currentLaboratorio.nombre = txtNameLaboratorio.Text;
+                    currentLaboratorio.descripcion = txtDescriptionLaboratorio.Text;
+
+                    DialogResult result = MessageBox.Show("¿Esta seguro de guardar?", "Pfizer - Laboratorio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        string response = Controlador.CLaboratorio.Update_laboratorio(currentLaboratorio);
+                        MessageBox.Show(response, "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetListLaboratorio();
+                        txtNameLaboratorio.Text = String.Empty;
+                        txtDescriptionLaboratorio.Text = String.Empty;
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnElminarLaboratorio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (currentLaboratorio == null)
+                {
+                    MessageBox.Show("No se ha seleccionado un registro", "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                DialogResult result = MessageBox.Show("¿Esta seguro de anular este registro?", "Pfizer - Laboratorio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    string response = Controlador.CLaboratorio.Delete_laboratorio(currentLaboratorio);
+                    MessageBox.Show(response, "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GetListLaboratorio();
+                    txtNameLaboratorio.Text = String.Empty;
+                    txtDescriptionLaboratorio.Text = String.Empty;
+
+                }
+                else
+                {
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvLotes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvLotes.Rows.Count <= 0)
+                {
+                    return;
+                }
+                else
+                {
+                    int idLote = Convert.ToInt32(dgvLotes.CurrentRow.Cells[0].Value);
+                    currentLote = listLote.Find(x => x.idLote == idLote);
+                    txtNameLote.Text = currentLote.nombre;
+                    txtDescriptionLote.Text = currentLote.descripcion;
+                    txtCodigoLote.Text = currentLote.codigo;
+                    isNewLote = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnGuardarLote_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (isNewLote)
+                {
+                    if (txtNameLote.Text == String.Empty || txtDescriptionLote.Text == String.Empty || txtCodigoLote.Text == string.Empty)
+                    {
+                        MessageBox.Show("Hay campos vacios", "Pfizer - Lote", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    Lote newLote = new Lote();
+                    newLote.nombre = txtNameLaboratorio.Text.ToUpper();
+                    newLote.descripcion = txtDescriptionLaboratorio.Text;
+                    newLote.codigo = txtCodigoLote.Text;
+
+                    DialogResult result = MessageBox.Show("¿Esta seguro de guardar?", "Pfizer - Lote", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        newLote = Controlador.CLote.Add_lote(newLote);
+                        MessageBox.Show("Se ha insertado de manera correcta", "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetListLote();
+                        txtNameLote.Text = String.Empty;
+                        txtDescriptionLote.Text = String.Empty;
+                        txtCodigoLote.Text = String.Empty;
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    if (txtNameLote.Text == String.Empty || txtDescriptionLote.Text == String.Empty || txtCodigoLote.Text == string.Empty)
+                    {
+                        MessageBox.Show("Hay campos vacios", "Pfizer - Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    currentLote.nombre = txtNameLote.Text.ToUpper();
+                    currentLote.descripcion = txtDescriptionLote.Text;
+                    currentLote.codigo = txtCodigoLote.Text;
+
+                    DialogResult result = MessageBox.Show("¿Esta seguro de guardar?", "Pfizer - Laboratorio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        string response = Controlador.CLote.Update_Lote(currentLote);
+                        MessageBox.Show(response, "Pfizer - Lote", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetListLote();
+                        txtNameLote.Text = String.Empty;
+                        txtDescriptionLote.Text = String.Empty;
+                        txtCodigoLote.Text = String.Empty;
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnNuevoLote_Click(object sender, EventArgs e)
+        {
+            isNewLote = true;
+            txtNameLote.Text = String.Empty;
+            txtDescriptionLote.Text = String.Empty;
+            txtCodigoLote.Text = String.Empty;
+
+        }
     }
 }

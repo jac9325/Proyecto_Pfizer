@@ -14,7 +14,6 @@ namespace Pfizer.Ventas
 {
     public partial class IUVentas : Form
     {
-
         StockProductos currentStockPrecio = new StockProductos();
         DetalleVenta currentDetalleVenta = new DetalleVenta();
         TipoDocumento currentDocumento = new TipoDocumento();
@@ -29,6 +28,9 @@ namespace Pfizer.Ventas
         List<TipoDocumento> currentListDocumento = new List<TipoDocumento>();
         Home home = new Home();
 
+        //--Para editar
+
+        bool IsNew = true;
         decimal Total = 0;
         decimal SubTotal = 0;
         decimal Igv = 0;
@@ -38,6 +40,18 @@ namespace Pfizer.Ventas
             this.currentUsuario = user;
             this.currentCajaSesion = cajaSesion;
             this.home = home;
+            this.IsNew = true;
+        } 
+        public IUVentas(Usuario user, CajaSesion cajaSesion, Home home, Venta venta, List<DetalleVenta> detail)
+        {
+            InitializeComponent();
+            this.currentUsuario = user;
+            this.currentCajaSesion = cajaSesion;
+            this.home = home;
+            this.currentListDetalleVenta = detail;
+            this.currentVenta = venta;
+            this.IsNew = false;
+
         } 
 
 
@@ -50,7 +64,12 @@ namespace Pfizer.Ventas
             chargeDocuments();
             cbTipoDocumento.SelectedValue = 2;
             lblVendedor.Text = currentUsuario.nombre + " " + currentUsuario.apellidos;
+            if (!IsNew)
+            {
+                chargeFilds();
+            }
         }
+
         public void recargarForm()
         {
             txtCantidad.Text = String.Empty;
@@ -65,6 +84,11 @@ namespace Pfizer.Ventas
             cargarDatoClienteInicial();
             currentDocumento = currentListDocumento.Find(x=>x.idTipoDocumento ==2);
             cbTipoDocumento.SelectedValue = 2;
+        }
+        public void chargeFilds()
+        {
+            DetalleVentaBindingSource.DataSource = null;
+            DetalleVentaBindingSource.DataSource = currentDetalleVenta;
         }
         public void cargar()
         {
@@ -526,9 +550,68 @@ namespace Pfizer.Ventas
 
                 }
             }
+            
+        }
 
-            
-            
+        public  void editDetail(DetalleVenta detail, int cantidad)
+        {
+            bool result = true;
+            List<LoteProducto> auxListLoteUtilizados = new List<LoteProducto>();
+            //-- estraemos el lote vendido estructura idLote:cantidad;
+            string lote = detail.loteVenta;
+            int idProducto = detail.idProducto;
+            //--separamos primeramente por ;
+            string[] sLote = lote.Split(';');
+
+            foreach (var item in sLote)
+            {
+                string[] Lote2 = item.Split(':');
+                foreach (var item2 in Lote2)
+                {
+                    LoteProducto aux = new LoteProducto();
+                    LoteProducto aux2 = new LoteProducto();
+                    aux = Controlador.CLote.GetLoteProductobyIdProductoandLote(Convert.ToInt32(Lote2[0]), idProducto);
+
+                    aux2.idLote = aux.idLoteProducto;
+                    aux2.cantidad = Convert.ToInt32(Lote2[1]);
+
+                    auxListLoteUtilizados.Add(aux2);
+                }
+            }
+            // Ahora traemos la cantidad existente para el lote
+
+            StockProductos auxStock = new StockProductos();
+            auxStock = Controlador.CStockProducto.Stock_by_producto(idProducto);
+
+            //--Comprobar que existe la cantidad necesaria
+            if (cantidad <= (detail.cantidad + auxStock.StockActual))
+            {
+                MessageBox.Show("No hay cantidad Necesaria en uno de los Stocks", "Stcok-Productos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //restaurar cantidad en los lotes stock
+            foreach (var loteDetail in auxListLoteUtilizados)
+            {
+                Controlador.CLote.Restore_lote(loteDetail);
+            }
+
+            //-- Ahora si realizar la venta nuevamente en base a la nueva cantidad 
+            List<LoteProducto> loteProductosDiscount = new List<LoteProducto>();
+            loteProductosDiscount = descontarLotes(cantidad, idProducto);
+
+            Controlador.CVenta.Add_lote(loteProductosDiscount);
+
+            //-- Actualizar el detalle de venta
+            string lotesVenta = "";
+            foreach (var item in loteProductosDiscount)
+            {
+                lotesVenta = item.idLote + ":" + item.cantidad + ";";
+            }
+            detail.loteVenta = lotesVenta;
+
+            Controlador.CVenta.Update_detail(detail);
+
         }
         
     }

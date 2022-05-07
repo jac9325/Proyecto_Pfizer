@@ -108,7 +108,7 @@ namespace Pfizer.Cajas
                 TotalEgresos += egreso.monto;
             }
 
-            TotalGeneral = TotalIngresos - TotalEgresos;
+            TotalGeneral = TotalIngresos - TotalEgresos + currentCajaSesion.montoInicio;
             lblMontoIngresos.Text = TotalIngresos.ToString();
             lblMontoEgresos.Text = TotalEgresos.ToString();
             lblMontoTotal.Text = (currentCajaSesion.montoInicio + TotalGeneral).ToString();
@@ -146,6 +146,8 @@ namespace Pfizer.Cajas
         {
             try
             {
+                if (currentCajaSesion.idCajaSesion == 0)
+                    return;
                 IUEgresos formEgreso = new IUEgresos(TotalGeneral, currentUsuario.idUsuario, currentCajaSesion.idCajaSesion);
                 formEgreso.ShowDialog();
                 calcularMontos();

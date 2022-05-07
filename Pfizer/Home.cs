@@ -57,8 +57,8 @@ namespace Pfizer
                     ventas = currentPermisos.venta;
                     almacen = currentPermisos.almacen;
                     pAdministracion.Visible = false;
-                    pVentas.Visible = ventas == 1 ? true : false;
                     pAlmacen.Visible = almacen == 1 ? true : false;
+                    pVentas.Visible = ventas == 1 ? true : false;
                 }
                 //cargamos caja sesion si es que tiene permisos de ventas
 
@@ -85,6 +85,8 @@ namespace Pfizer
                 //-- Si hay la caja esta iniciada cargar valores
                 if (currentCajaSesion != null)
                 {
+                    //--cargar el icono
+                    pxListVentas.Visible = true;
                     lblEstadoCaja.Text = "Caja Iniciada";
                     lblEstadoCaja.ForeColor = Color.Green;
                     //--Si hay una caja iniciada cargamos los ingresos y egresos
@@ -251,21 +253,18 @@ namespace Pfizer
         {
             if (currentUsuario == null)
             {
-                MessageBox.Show("No existe usuaario o usted no tiene permisos");
+                MessageBox.Show("No existe usuario o usted no tiene permisos");
                 return;
             }
-            if (currentPermisos!= null && currentPermisos.caja == 1)
+            if (currentPermisos!= null && currentPermisos.venta == 1)
             {
-                if(currentPermisos.administrador == 1)
-                {
-                    IUCaja formCaja = new IUCaja(currentUsuario, this);
-                    AbrirFormEnPanel(formCaja);
-                    cargarPermisos();
-                }
-                else
-                {
-                    MessageBox.Show("");
-                }
+                IUCaja formCaja = new IUCaja(currentUsuario, this);
+                AbrirFormEnPanel(formCaja);
+                cargarPermisos();
+            }
+            else
+            {
+                MessageBox.Show("Usted no tine permisos para ingresar", "Pfizer - Caja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -329,6 +328,23 @@ namespace Pfizer
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVentaEspecial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pxListVentas_Click(object sender, EventArgs e)
+        {
+            List<Venta> list = new List<Venta>();
+            if (currentCajaSesion.idCajaSesion != 0)
+            {
+                list = Controlador.CVenta.getListVentabySesion(currentCajaSesion.idCajaSesion);
+                IUListVentasSesion form = new IUListVentasSesion(list, this, currentCajaSesion, currentUsuario);
+                AbrirFormEnPanel(form);
+
+            }
         }
     }
 }

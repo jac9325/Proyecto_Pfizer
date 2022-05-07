@@ -21,6 +21,7 @@ namespace Pfizer.stock
 
         private void IUStockProducto_Load(object sender, EventArgs e)
         {
+            dgvDatosStock.RowTemplate.Height = 50;
             cargarLista();
         }
         public void cargarLista()
@@ -28,6 +29,22 @@ namespace Pfizer.stock
             currentStockPrecio = Controlador.CStockProducto.List_stock();
             StockBindingSource.DataSource = null;
             StockBindingSource.DataSource = currentStockPrecio;
+        }
+
+        private void txtxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                currentStockPrecio = Controlador.CStockProducto.stockProductos_like(txtxBuscar.Text);
+                StockBindingSource.DataSource = null;
+                StockBindingSource.DataSource = currentStockPrecio;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

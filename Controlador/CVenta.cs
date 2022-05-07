@@ -69,6 +69,33 @@ namespace Controlador
                 //return detalle;
             }           
         }
+        public static void Update_detail(DetalleVenta detalle)
+        {
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    //using dinamic parameter
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@idDetalleVenta", value: detalle.idDetalleVenta);
+                    parameters.Add("@idProducto", value: detalle.idProducto);
+                    parameters.Add("@cantidad", value: detalle.cantidad);
+                    parameters.Add("@precioUnitario", value: detalle.precioUnitario);
+                    parameters.Add("@descuento", value: detalle.descuento);
+                    parameters.Add("@subtotal", value: detalle.subtotal);
+                    parameters.Add("@igv", value: detalle.igv);
+                    parameters.Add("@total", value: detalle.total);
+                    parameters.Add("@loteVenta", value: detalle.loteVenta);
+
+                    var id = db.Execute("spuUpdate_detail", parameters, commandType: CommandType.StoredProcedure);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+        }
         public static string Add_lote(List<LoteProducto> lotes)
         {
             string datos = "";
@@ -115,6 +142,52 @@ namespace Controlador
                 SaveAll(venta, idCajaSesion);
 
                 transactionScope.Complete();
+            }
+        }
+        public static List<Venta> getListVentabySesion(int idCajaSesion)
+        {
+            try
+            {
+                List<Venta> ventas = new List<Venta>();
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    //using dinamic parameter
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@idCajaSesion", value: idCajaSesion);
+
+
+                    ventas = db.Query<Venta>(
+                       "spugetList_Ventas_bySesion", parameters, commandType: CommandType.StoredProcedure).ToList();
+                    return ventas;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static List<DetalleVenta> getListDetalleVentabyVenta(int idVenta)
+        {
+            try
+            {
+                List<DetalleVenta> listdetail = new List<DetalleVenta>();
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    //using dinamic parameter
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@idVenta", value: idVenta);
+
+
+                    listdetail = db.Query<DetalleVenta>(
+                       "spuList_detail_venta", parameters, commandType: CommandType.StoredProcedure).ToList();
+                    return listdetail;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

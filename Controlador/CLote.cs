@@ -30,6 +30,55 @@ namespace Controlador
                 return lote;
             }
         }
+        public static string Update_Lote(Lote lote)
+        {
+            string response = "Se ha modificado de manera correcta";
+            try
+            {
+                using (IDbConnection db = new
+                   SqlConnection(conexion.Conexion))
+                {
+                    //using dinamic parameter
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@idLote", value: lote.idLote);
+                    parameters.Add("@nombre", value: lote.nombre);
+                    parameters.Add("@codigo", value: lote.codigo);
+                    parameters.Add("@descripcion", value: lote.descripcion);
+                    parameters.Add("@fecha", value: lote.fecha);
+
+                    var id = db.Execute("spuInsert_lote", parameters, commandType: CommandType.StoredProcedure);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                response = ex.ToString();
+            }
+            return response;
+        }
+        public static void Restore_lote(LoteProducto lote)
+        {
+            string response = "ok";
+            try
+            {
+                using (IDbConnection db = new
+                   SqlConnection(conexion.Conexion))
+                {
+                    //using dinamic parameter
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@idLoteProducto", value: lote.idLoteProducto);
+                    parameters.Add("@cantidad", value: lote.cantidad);
+
+
+                    var id = db.Execute("spuRestaurarLote", parameters, commandType: CommandType.StoredProcedure);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                response = ex.ToString();
+            }
+        }
         public static void Add_lote_producto(LoteProducto lote)
         {
             using (IDbConnection db = new
@@ -82,6 +131,29 @@ namespace Controlador
                         "spuGetLotes_productos_by_producto", parametros, commandType: CommandType.StoredProcedure).ToList();
                 }
                 return lote;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public static LoteProducto GetLoteProductobyIdProductoandLote(int idlote, int idProducto)
+        {
+            List<LoteProducto> lote = new List<LoteProducto>();
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@idLote", idlote);
+                    parametros.Add("@idProducto", idProducto);
+
+                    lote = db.Query<LoteProducto>(
+                        "spuGetLoteProductobyIdLoteandIdProducto", parametros, commandType: CommandType.StoredProcedure).ToList();
+                }
+                return lote[0];
             }
             catch (Exception)
             {

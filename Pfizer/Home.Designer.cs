@@ -49,33 +49,34 @@ namespace Pfizer
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEstadoCaja = new System.Windows.Forms.Label();
-            this.pAlmacen = new System.Windows.Forms.Panel();
+            this.pVentas = new System.Windows.Forms.Panel();
+            this.btnVentaEspecial = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pVentas = new System.Windows.Forms.Panel();
+            this.pAlmacen = new System.Windows.Forms.Panel();
             this.btnIngresosAlmacen = new System.Windows.Forms.Button();
             this.btnAlmacen = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pAdministracion = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.pTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pxFraccionar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pxImagenCerrar = new System.Windows.Forms.PictureBox();
             this.pContainer = new System.Windows.Forms.Panel();
-            this.btnReportes = new System.Windows.Forms.Button();
+            this.pxListVentas = new System.Windows.Forms.PictureBox();
+            this.pxImagenCerrar = new System.Windows.Forms.PictureBox();
             this.pLeft.SuspendLayout();
             this.pDatosGenerales.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbVentas.SuspendLayout();
-            this.pAlmacen.SuspendLayout();
             this.pVentas.SuspendLayout();
+            this.pAlmacen.SuspendLayout();
             this.pAdministracion.SuspendLayout();
             this.pTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pxFraccionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pxListVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagenCerrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,8 +84,8 @@ namespace Pfizer
             // 
             this.pLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(195)))), ((int)(((byte)(190)))));
             this.pLeft.Controls.Add(this.pDatosGenerales);
-            this.pLeft.Controls.Add(this.pAlmacen);
             this.pLeft.Controls.Add(this.pVentas);
+            this.pLeft.Controls.Add(this.pAlmacen);
             this.pLeft.Controls.Add(this.pAdministracion);
             this.pLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pLeft.Location = new System.Drawing.Point(0, 0);
@@ -99,7 +100,7 @@ namespace Pfizer
             this.pDatosGenerales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDatosGenerales.Location = new System.Drawing.Point(0, 0);
             this.pDatosGenerales.Name = "pDatosGenerales";
-            this.pDatosGenerales.Size = new System.Drawing.Size(227, 322);
+            this.pDatosGenerales.Size = new System.Drawing.Size(227, 275);
             this.pDatosGenerales.TabIndex = 4;
             // 
             // groupBox1
@@ -312,15 +313,31 @@ namespace Pfizer
             this.lblEstadoCaja.TabIndex = 0;
             this.lblEstadoCaja.Text = "Caja no Iniciada";
             // 
-            // pAlmacen
+            // pVentas
             // 
-            this.pAlmacen.Controls.Add(this.btnCaja);
-            this.pAlmacen.Controls.Add(this.button3);
-            this.pAlmacen.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pAlmacen.Location = new System.Drawing.Point(0, 322);
-            this.pAlmacen.Name = "pAlmacen";
-            this.pAlmacen.Size = new System.Drawing.Size(227, 147);
-            this.pAlmacen.TabIndex = 4;
+            this.pVentas.Controls.Add(this.btnVentaEspecial);
+            this.pVentas.Controls.Add(this.btnCaja);
+            this.pVentas.Controls.Add(this.button3);
+            this.pVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pVentas.Location = new System.Drawing.Point(0, 275);
+            this.pVentas.Name = "pVentas";
+            this.pVentas.Size = new System.Drawing.Size(227, 194);
+            this.pVentas.TabIndex = 4;
+            // 
+            // btnVentaEspecial
+            // 
+            this.btnVentaEspecial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(53)))), ((int)(((byte)(70)))));
+            this.btnVentaEspecial.FlatAppearance.BorderSize = 0;
+            this.btnVentaEspecial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentaEspecial.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.btnVentaEspecial.ForeColor = System.Drawing.Color.White;
+            this.btnVentaEspecial.Location = new System.Drawing.Point(13, 69);
+            this.btnVentaEspecial.Name = "btnVentaEspecial";
+            this.btnVentaEspecial.Size = new System.Drawing.Size(208, 55);
+            this.btnVentaEspecial.TabIndex = 0;
+            this.btnVentaEspecial.Text = "Venta Especial";
+            this.btnVentaEspecial.UseVisualStyleBackColor = false;
+            this.btnVentaEspecial.Click += new System.EventHandler(this.btnVentaEspecial_Click);
             // 
             // btnCaja
             // 
@@ -329,7 +346,7 @@ namespace Pfizer
             this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaja.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCaja.Location = new System.Drawing.Point(11, 27);
+            this.btnCaja.Location = new System.Drawing.Point(11, 11);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(210, 51);
             this.btnCaja.TabIndex = 0;
@@ -344,7 +361,7 @@ namespace Pfizer
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(13, 84);
+            this.button3.Location = new System.Drawing.Point(13, 132);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(208, 55);
             this.button3.TabIndex = 2;
@@ -352,16 +369,16 @@ namespace Pfizer
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pVentas
+            // pAlmacen
             // 
-            this.pVentas.Controls.Add(this.btnIngresosAlmacen);
-            this.pVentas.Controls.Add(this.btnAlmacen);
-            this.pVentas.Controls.Add(this.button4);
-            this.pVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pVentas.Location = new System.Drawing.Point(0, 469);
-            this.pVentas.Name = "pVentas";
-            this.pVentas.Size = new System.Drawing.Size(227, 188);
-            this.pVentas.TabIndex = 4;
+            this.pAlmacen.Controls.Add(this.btnIngresosAlmacen);
+            this.pAlmacen.Controls.Add(this.btnAlmacen);
+            this.pAlmacen.Controls.Add(this.button4);
+            this.pAlmacen.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pAlmacen.Location = new System.Drawing.Point(0, 469);
+            this.pAlmacen.Name = "pAlmacen";
+            this.pAlmacen.Size = new System.Drawing.Size(227, 188);
+            this.pAlmacen.TabIndex = 4;
             // 
             // btnIngresosAlmacen
             // 
@@ -434,6 +451,20 @@ namespace Pfizer
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(53)))), ((int)(((byte)(70)))));
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Location = new System.Drawing.Point(11, 6);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(210, 54);
+            this.btnReportes.TabIndex = 0;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            // 
             // btnUsers
             // 
             this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(53)))), ((int)(((byte)(70)))));
@@ -463,20 +494,12 @@ namespace Pfizer
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pxFraccionar);
+            this.panel1.Controls.Add(this.pxListVentas);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(93, 92);
             this.panel1.TabIndex = 2;
-            // 
-            // pxFraccionar
-            // 
-            this.pxFraccionar.Location = new System.Drawing.Point(18, 12);
-            this.pxFraccionar.Name = "pxFraccionar";
-            this.pxFraccionar.Size = new System.Drawing.Size(57, 56);
-            this.pxFraccionar.TabIndex = 0;
-            this.pxFraccionar.TabStop = false;
             // 
             // label1
             // 
@@ -490,18 +513,6 @@ namespace Pfizer
             this.label1.Text = "PFIZER 1.0.0.0";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // pxImagenCerrar
-            // 
-            this.pxImagenCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pxImagenCerrar.Image = global::Pfizer.Properties.Resources.Cancel_icon_icons_com_73703;
-            this.pxImagenCerrar.Location = new System.Drawing.Point(1094, 12);
-            this.pxImagenCerrar.Name = "pxImagenCerrar";
-            this.pxImagenCerrar.Size = new System.Drawing.Size(48, 44);
-            this.pxImagenCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pxImagenCerrar.TabIndex = 0;
-            this.pxImagenCerrar.TabStop = false;
-            this.pxImagenCerrar.Click += new System.EventHandler(this.pxImagenCerrar_Click);
-            // 
             // pContainer
             // 
             this.pContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -513,19 +524,29 @@ namespace Pfizer
             this.pContainer.Size = new System.Drawing.Size(1154, 749);
             this.pContainer.TabIndex = 2;
             // 
-            // btnReportes
+            // pxListVentas
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(53)))), ((int)(((byte)(70)))));
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(11, 6);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(210, 54);
-            this.btnReportes.TabIndex = 0;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.UseVisualStyleBackColor = false;
+            this.pxListVentas.Image = global::Pfizer.Properties.Resources.icono_venta;
+            this.pxListVentas.Location = new System.Drawing.Point(18, 12);
+            this.pxListVentas.Name = "pxListVentas";
+            this.pxListVentas.Size = new System.Drawing.Size(57, 56);
+            this.pxListVentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pxListVentas.TabIndex = 0;
+            this.pxListVentas.TabStop = false;
+            this.pxListVentas.Visible = false;
+            this.pxListVentas.Click += new System.EventHandler(this.pxListVentas_Click);
+            // 
+            // pxImagenCerrar
+            // 
+            this.pxImagenCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pxImagenCerrar.Image = global::Pfizer.Properties.Resources.Cancel_icon_icons_com_73703;
+            this.pxImagenCerrar.Location = new System.Drawing.Point(1094, 12);
+            this.pxImagenCerrar.Name = "pxImagenCerrar";
+            this.pxImagenCerrar.Size = new System.Drawing.Size(48, 44);
+            this.pxImagenCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pxImagenCerrar.TabIndex = 0;
+            this.pxImagenCerrar.TabStop = false;
+            this.pxImagenCerrar.Click += new System.EventHandler(this.pxImagenCerrar_Click);
             // 
             // Home
             // 
@@ -547,13 +568,13 @@ namespace Pfizer
             this.groupBox1.PerformLayout();
             this.gbVentas.ResumeLayout(false);
             this.gbVentas.PerformLayout();
-            this.pAlmacen.ResumeLayout(false);
             this.pVentas.ResumeLayout(false);
+            this.pAlmacen.ResumeLayout(false);
             this.pAdministracion.ResumeLayout(false);
             this.pTop.ResumeLayout(false);
             this.pTop.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pxFraccionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pxListVentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagenCerrar)).EndInit();
             this.ResumeLayout(false);
 
@@ -577,10 +598,10 @@ namespace Pfizer
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pxFraccionar;
+        private System.Windows.Forms.PictureBox pxListVentas;
         private System.Windows.Forms.Panel pDatosGenerales;
-        private System.Windows.Forms.Panel pAlmacen;
         private System.Windows.Forms.Panel pVentas;
+        private System.Windows.Forms.Panel pAlmacen;
         private System.Windows.Forms.Panel pAdministracion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox gbVentas;
@@ -598,5 +619,6 @@ namespace Pfizer
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnVentaEspecial;
     }
 }

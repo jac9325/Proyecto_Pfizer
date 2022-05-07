@@ -65,5 +65,58 @@ namespace Controlador
                 return ex.ToString();
             }
         }
+
+        public static string Update_egreso(Egresos egreso)
+        {
+            string response = "Se ha modificado  de manera correcta";
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@idEgreso", egreso.idEgreso);
+                    parametros.Add("@monto", egreso.monto);
+                    parametros.Add("@motivo", egreso.motivo);
+                    parametros.Add("@observacion", egreso.observacion);
+
+                    var insert = db.Query<Egresos>(
+                        "spuUpdate_Egreso", parametros, commandType: CommandType.StoredProcedure);
+
+
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.ToString();
+            }
+        }
+        public static string Delete_egreso(Egresos egreso)
+        {
+            string response = "Se ha eliminado de manera correcta";
+            try
+            {
+                using (IDbConnection db = new
+                    SqlConnection(conexion.Conexion))
+                {
+                    var parametros = new DynamicParameters();
+
+                    parametros.Add("@idEgreso", egreso.idEgreso);
+
+                    var insert = db.Query<Egresos>(
+                        "spuInsert_egreso", parametros, commandType: CommandType.StoredProcedure);
+
+
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.ToString();
+            }
+        }
     }
 }

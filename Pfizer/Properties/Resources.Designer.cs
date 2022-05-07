@@ -93,6 +93,16 @@ namespace Pfizer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icono_venta {
+            get {
+                object obj = ResourceManager.GetObject("icono_venta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mascara {
             get {
                 object obj = ResourceManager.GetObject("Mascara", resourceCulture);

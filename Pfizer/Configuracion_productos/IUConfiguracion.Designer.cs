@@ -94,7 +94,6 @@ namespace Pfizer.Configuracion_productos
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtNameLaboratorio = new System.Windows.Forms.TextBox();
             this.btnNuevoLaboratorio = new System.Windows.Forms.Button();
-            this.btnCancelarLaboratorio = new System.Windows.Forms.Button();
             this.btnElminarLaboratorio = new System.Windows.Forms.Button();
             this.btnGuardarLaboratorio = new System.Windows.Forms.Button();
             this.txtDescriptionLaboratorio = new System.Windows.Forms.TextBox();
@@ -110,18 +109,18 @@ namespace Pfizer.Configuracion_productos
             this.descripcionDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnNuevoLote = new System.Windows.Forms.Button();
+            this.btnGuardarLote = new System.Windows.Forms.Button();
             this.txtCodigoLote = new System.Windows.Forms.TextBox();
             this.txtNameLote = new System.Windows.Forms.TextBox();
-            this.btnNuevoLote = new System.Windows.Forms.Button();
-            this.btnCancelarLote = new System.Windows.Forms.Button();
-            this.btlEliminarLote = new System.Windows.Forms.Button();
-            this.btnGuardarLote = new System.Windows.Forms.Button();
+            this.btnImprimirReporteLotes = new System.Windows.Forms.Button();
             this.txtDescriptionLote = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblProducto = new System.Windows.Forms.Label();
             this.btnProductosHijos = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
@@ -166,7 +165,6 @@ namespace Pfizer.Configuracion_productos
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblProducto = new System.Windows.Forms.Label();
             this.tbConfiguracion.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -851,6 +849,7 @@ namespace Pfizer.Configuracion_productos
             this.dgvLaboratorios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLaboratorios.Size = new System.Drawing.Size(980, 238);
             this.dgvLaboratorios.TabIndex = 0;
+            this.dgvLaboratorios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLaboratorios_CellClick);
             // 
             // idLaboratorioDataGridViewTextBoxColumn
             // 
@@ -884,7 +883,6 @@ namespace Pfizer.Configuracion_productos
             // 
             this.panel8.Controls.Add(this.txtNameLaboratorio);
             this.panel8.Controls.Add(this.btnNuevoLaboratorio);
-            this.panel8.Controls.Add(this.btnCancelarLaboratorio);
             this.panel8.Controls.Add(this.btnElminarLaboratorio);
             this.panel8.Controls.Add(this.btnGuardarLaboratorio);
             this.panel8.Controls.Add(this.txtDescriptionLaboratorio);
@@ -910,24 +908,13 @@ namespace Pfizer.Configuracion_productos
             this.btnNuevoLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoLaboratorio.Location = new System.Drawing.Point(751, 111);
+            this.btnNuevoLaboratorio.Location = new System.Drawing.Point(751, 188);
             this.btnNuevoLaboratorio.Name = "btnNuevoLaboratorio";
             this.btnNuevoLaboratorio.Size = new System.Drawing.Size(181, 45);
             this.btnNuevoLaboratorio.TabIndex = 5;
             this.btnNuevoLaboratorio.Text = "Nuevo";
             this.btnNuevoLaboratorio.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarLaboratorio
-            // 
-            this.btnCancelarLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
-            this.btnCancelarLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarLaboratorio.Location = new System.Drawing.Point(751, 177);
-            this.btnCancelarLaboratorio.Name = "btnCancelarLaboratorio";
-            this.btnCancelarLaboratorio.Size = new System.Drawing.Size(181, 46);
-            this.btnCancelarLaboratorio.TabIndex = 4;
-            this.btnCancelarLaboratorio.Text = "Cancelar";
-            this.btnCancelarLaboratorio.UseVisualStyleBackColor = false;
+            this.btnNuevoLaboratorio.Click += new System.EventHandler(this.btnNuevoLaboratorio_Click);
             // 
             // btnElminarLaboratorio
             // 
@@ -941,6 +928,7 @@ namespace Pfizer.Configuracion_productos
             this.btnElminarLaboratorio.TabIndex = 3;
             this.btnElminarLaboratorio.Text = "Eliminar";
             this.btnElminarLaboratorio.UseVisualStyleBackColor = false;
+            this.btnElminarLaboratorio.Click += new System.EventHandler(this.btnElminarLaboratorio_Click);
             // 
             // btnGuardarLaboratorio
             // 
@@ -948,12 +936,13 @@ namespace Pfizer.Configuracion_productos
             this.btnGuardarLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarLaboratorio.Location = new System.Drawing.Point(751, 42);
+            this.btnGuardarLaboratorio.Location = new System.Drawing.Point(751, 119);
             this.btnGuardarLaboratorio.Name = "btnGuardarLaboratorio";
             this.btnGuardarLaboratorio.Size = new System.Drawing.Size(181, 40);
             this.btnGuardarLaboratorio.TabIndex = 3;
             this.btnGuardarLaboratorio.Text = "Guardar";
             this.btnGuardarLaboratorio.UseVisualStyleBackColor = false;
+            this.btnGuardarLaboratorio.Click += new System.EventHandler(this.btnGuardarLaboratorio_Click);
             // 
             // txtDescriptionLaboratorio
             // 
@@ -1031,7 +1020,7 @@ namespace Pfizer.Configuracion_productos
             this.codigoDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn4});
             this.dgvLotes.DataSource = this.LotesBindingSource;
-            this.dgvLotes.Location = new System.Drawing.Point(47, 18);
+            this.dgvLotes.Location = new System.Drawing.Point(55, 17);
             this.dgvLotes.Name = "dgvLotes";
             this.dgvLotes.ReadOnly = true;
             this.dgvLotes.RowHeadersWidth = 51;
@@ -1039,6 +1028,7 @@ namespace Pfizer.Configuracion_productos
             this.dgvLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLotes.Size = new System.Drawing.Size(980, 238);
             this.dgvLotes.TabIndex = 0;
+            this.dgvLotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLotes_CellClick);
             // 
             // idLoteDataGridViewTextBoxColumn
             // 
@@ -1078,12 +1068,11 @@ namespace Pfizer.Configuracion_productos
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.btnNuevoLote);
+            this.panel10.Controls.Add(this.btnGuardarLote);
             this.panel10.Controls.Add(this.txtCodigoLote);
             this.panel10.Controls.Add(this.txtNameLote);
-            this.panel10.Controls.Add(this.btnNuevoLote);
-            this.panel10.Controls.Add(this.btnCancelarLote);
-            this.panel10.Controls.Add(this.btlEliminarLote);
-            this.panel10.Controls.Add(this.btnGuardarLote);
+            this.panel10.Controls.Add(this.btnImprimirReporteLotes);
             this.panel10.Controls.Add(this.txtDescriptionLote);
             this.panel10.Controls.Add(this.label13);
             this.panel10.Controls.Add(this.label14);
@@ -1094,6 +1083,34 @@ namespace Pfizer.Configuracion_productos
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1343, 585);
             this.panel10.TabIndex = 4;
+            // 
+            // btnNuevoLote
+            // 
+            this.btnNuevoLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
+            this.btnNuevoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoLote.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoLote.Location = new System.Drawing.Point(684, 147);
+            this.btnNuevoLote.Name = "btnNuevoLote";
+            this.btnNuevoLote.Size = new System.Drawing.Size(181, 45);
+            this.btnNuevoLote.TabIndex = 9;
+            this.btnNuevoLote.Text = "Nuevo";
+            this.btnNuevoLote.UseVisualStyleBackColor = false;
+            this.btnNuevoLote.Click += new System.EventHandler(this.btnNuevoLote_Click);
+            // 
+            // btnGuardarLote
+            // 
+            this.btnGuardarLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
+            this.btnGuardarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarLote.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarLote.Location = new System.Drawing.Point(684, 207);
+            this.btnGuardarLote.Name = "btnGuardarLote";
+            this.btnGuardarLote.Size = new System.Drawing.Size(181, 40);
+            this.btnGuardarLote.TabIndex = 8;
+            this.btnGuardarLote.Text = "Guardar";
+            this.btnGuardarLote.UseVisualStyleBackColor = false;
+            this.btnGuardarLote.Click += new System.EventHandler(this.btnGuardarLote_Click);
             // 
             // txtCodigoLote
             // 
@@ -1109,56 +1126,18 @@ namespace Pfizer.Configuracion_productos
             this.txtNameLote.Size = new System.Drawing.Size(141, 22);
             this.txtNameLote.TabIndex = 6;
             // 
-            // btnNuevoLote
+            // btnImprimirReporteLotes
             // 
-            this.btnNuevoLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
-            this.btnNuevoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoLote.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoLote.Location = new System.Drawing.Point(751, 101);
-            this.btnNuevoLote.Name = "btnNuevoLote";
-            this.btnNuevoLote.Size = new System.Drawing.Size(181, 45);
-            this.btnNuevoLote.TabIndex = 5;
-            this.btnNuevoLote.Text = "Nuevo";
-            this.btnNuevoLote.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarLote
-            // 
-            this.btnCancelarLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
-            this.btnCancelarLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarLote.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarLote.Location = new System.Drawing.Point(751, 167);
-            this.btnCancelarLote.Name = "btnCancelarLote";
-            this.btnCancelarLote.Size = new System.Drawing.Size(181, 46);
-            this.btnCancelarLote.TabIndex = 4;
-            this.btnCancelarLote.Text = "Cancelar";
-            this.btnCancelarLote.UseVisualStyleBackColor = false;
-            // 
-            // btlEliminarLote
-            // 
-            this.btlEliminarLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
-            this.btlEliminarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btlEliminarLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btlEliminarLote.ForeColor = System.Drawing.Color.White;
-            this.btlEliminarLote.Location = new System.Drawing.Point(751, 234);
-            this.btlEliminarLote.Name = "btlEliminarLote";
-            this.btlEliminarLote.Size = new System.Drawing.Size(181, 40);
-            this.btlEliminarLote.TabIndex = 3;
-            this.btlEliminarLote.Text = "Eliminar";
-            this.btlEliminarLote.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarLote
-            // 
-            this.btnGuardarLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
-            this.btnGuardarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarLote.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarLote.Location = new System.Drawing.Point(751, 42);
-            this.btnGuardarLote.Name = "btnGuardarLote";
-            this.btnGuardarLote.Size = new System.Drawing.Size(181, 40);
-            this.btnGuardarLote.TabIndex = 3;
-            this.btnGuardarLote.Text = "Guardar";
-            this.btnGuardarLote.UseVisualStyleBackColor = false;
+            this.btnImprimirReporteLotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(175)))));
+            this.btnImprimirReporteLotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirReporteLotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirReporteLotes.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirReporteLotes.Location = new System.Drawing.Point(684, 259);
+            this.btnImprimirReporteLotes.Name = "btnImprimirReporteLotes";
+            this.btnImprimirReporteLotes.Size = new System.Drawing.Size(181, 40);
+            this.btnImprimirReporteLotes.TabIndex = 3;
+            this.btnImprimirReporteLotes.Text = "Imprimir Reporte";
+            this.btnImprimirReporteLotes.UseVisualStyleBackColor = false;
             // 
             // txtDescriptionLote
             // 
@@ -1249,6 +1228,16 @@ namespace Pfizer.Configuracion_productos
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Productos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(34, 329);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(76, 20);
+            this.lblProducto.TabIndex = 21;
+            this.lblProducto.Text = "Producto";
             // 
             // btnProductosHijos
             // 
@@ -1369,7 +1358,7 @@ namespace Pfizer.Configuracion_productos
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(364, 234);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(218, 24);
+            this.label24.Size = new System.Drawing.Size(207, 22);
             this.label24.TabIndex = 10;
             this.label24.Text = "Información Adicional:";
             // 
@@ -1379,7 +1368,7 @@ namespace Pfizer.Configuracion_productos
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(364, 130);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(191, 24);
+            this.label23.Size = new System.Drawing.Size(179, 22);
             this.label23.TabIndex = 10;
             this.label23.Text = "Recomendaciones:";
             // 
@@ -1389,7 +1378,7 @@ namespace Pfizer.Configuracion_productos
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(364, 66);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(173, 24);
+            this.label28.Size = new System.Drawing.Size(165, 22);
             this.label28.TabIndex = 10;
             this.label28.Text = "Código Producto:";
             // 
@@ -1399,7 +1388,7 @@ namespace Pfizer.Configuracion_productos
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(25, 66);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 24);
+            this.label19.Size = new System.Drawing.Size(85, 22);
             this.label19.TabIndex = 10;
             this.label19.Text = "Nombre:";
             // 
@@ -1450,7 +1439,7 @@ namespace Pfizer.Configuracion_productos
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(26, 224);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(109, 24);
+            this.label22.Size = new System.Drawing.Size(104, 22);
             this.label22.TabIndex = 10;
             this.label22.Text = "Ubicación:";
             // 
@@ -1460,7 +1449,7 @@ namespace Pfizer.Configuracion_productos
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(26, 293);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(98, 24);
+            this.label20.Size = new System.Drawing.Size(93, 22);
             this.label20.TabIndex = 10;
             this.label20.Text = "Fracción:";
             // 
@@ -1470,7 +1459,7 @@ namespace Pfizer.Configuracion_productos
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(25, 147);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(138, 24);
+            this.label18.Size = new System.Drawing.Size(130, 22);
             this.label18.TabIndex = 10;
             this.label18.Text = "Composición:";
             // 
@@ -1703,19 +1692,9 @@ namespace Pfizer.Configuracion_productos
             this.label1.ForeColor = System.Drawing.Color.OrangeRed;
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 32);
+            this.label1.Size = new System.Drawing.Size(271, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "CONFIGURACIÓN ";
-            // 
-            // lblProducto
-            // 
-            this.lblProducto.AutoSize = true;
-            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(168, 331);
-            this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(76, 20);
-            this.lblProducto.TabIndex = 21;
-            this.lblProducto.Text = "Producto";
             // 
             // IUConfiguracion
             // 
@@ -1818,7 +1797,6 @@ namespace Pfizer.Configuracion_productos
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox txtNameLaboratorio;
         private System.Windows.Forms.Button btnNuevoLaboratorio;
-        private System.Windows.Forms.Button btnCancelarLaboratorio;
         private System.Windows.Forms.Button btnElminarLaboratorio;
         private System.Windows.Forms.Button btnGuardarLaboratorio;
         private System.Windows.Forms.TextBox txtDescriptionLaboratorio;
@@ -1829,10 +1807,7 @@ namespace Pfizer.Configuracion_productos
         private System.Windows.Forms.DataGridView dgvLotes;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox txtNameLote;
-        private System.Windows.Forms.Button btnNuevoLote;
-        private System.Windows.Forms.Button btnCancelarLote;
-        private System.Windows.Forms.Button btlEliminarLote;
-        private System.Windows.Forms.Button btnGuardarLote;
+        private System.Windows.Forms.Button btnImprimirReporteLotes;
         private System.Windows.Forms.TextBox txtDescriptionLote;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -1906,5 +1881,7 @@ namespace Pfizer.Configuracion_productos
         private System.Windows.Forms.Button btnEliminarProducto;
         private System.Windows.Forms.Button btnProductosHijos;
         private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.Button btnGuardarLote;
+        private System.Windows.Forms.Button btnNuevoLote;
     }
 }

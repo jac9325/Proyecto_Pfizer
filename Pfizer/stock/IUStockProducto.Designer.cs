@@ -30,6 +30,7 @@ namespace Pfizer.stock
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDatosStock = new System.Windows.Forms.DataGridView();
             this.idStockPrecioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +39,7 @@ namespace Pfizer.stock
             this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockMinimoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtxBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -61,13 +63,21 @@ namespace Pfizer.stock
             this.precioVentaDataGridViewTextBoxColumn,
             this.stockMinimoDataGridViewTextBoxColumn});
             this.dgvDatosStock.DataSource = this.StockBindingSource;
-            this.dgvDatosStock.Location = new System.Drawing.Point(12, 12);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosStock.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDatosStock.Location = new System.Drawing.Point(12, 97);
             this.dgvDatosStock.Name = "dgvDatosStock";
             this.dgvDatosStock.ReadOnly = true;
             this.dgvDatosStock.RowHeadersWidth = 51;
             this.dgvDatosStock.RowTemplate.Height = 24;
             this.dgvDatosStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatosStock.Size = new System.Drawing.Size(1130, 508);
+            this.dgvDatosStock.Size = new System.Drawing.Size(1130, 423);
             this.dgvDatosStock.TabIndex = 15;
             // 
             // idStockPrecioDataGridViewTextBoxColumn
@@ -124,11 +134,22 @@ namespace Pfizer.stock
             // 
             this.StockBindingSource.DataSource = typeof(Entidades.StockProductos);
             // 
+            // txtxBuscar
+            // 
+            this.txtxBuscar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtxBuscar.Location = new System.Drawing.Point(12, 29);
+            this.txtxBuscar.Multiline = true;
+            this.txtxBuscar.Name = "txtxBuscar";
+            this.txtxBuscar.Size = new System.Drawing.Size(739, 53);
+            this.txtxBuscar.TabIndex = 16;
+            this.txtxBuscar.TextChanged += new System.EventHandler(this.txtxBuscar_TextChanged);
+            // 
             // IUStockProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 545);
+            this.Controls.Add(this.txtxBuscar);
             this.Controls.Add(this.dgvDatosStock);
             this.Name = "IUStockProducto";
             this.Text = "IUStockProducto";
@@ -136,6 +157,7 @@ namespace Pfizer.stock
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +171,6 @@ namespace Pfizer.stock
         private System.Windows.Forms.DataGridViewTextBoxColumn stockActualDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioVentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockMinimoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtxBuscar;
     }
 }

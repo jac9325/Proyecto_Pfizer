@@ -192,6 +192,12 @@
     <Compile Include="Users\IUUsuario.Designer.cs">
       <DependentUpon>IUUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\IUListVentasSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\IUListVentasSesion.Designer.cs">
+      <DependentUpon>IUListVentasSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\IUVentaRapida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     <EmbeddedResource Include="Users\IUUsuario.resx">
       <DependentUpon>IUUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\IUListVentasSesion.resx">
+      <DependentUpon>IUListVentasSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\IUVentaRapida.resx">
       <DependentUpon>IUVentaRapida.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +310,7 @@
     <None Include="Properties\DataSources\Entidades.StockProductos.datasource" />
     <None Include="Properties\DataSources\Entidades.TipoDocumento.datasource" />
     <None Include="Properties\DataSources\Entidades.Usuario.datasource" />
+    <None Include="Properties\DataSources\Entidades.Venta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -337,6 +347,7 @@
     <None Include="Resources\Mascara.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icono_venta.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

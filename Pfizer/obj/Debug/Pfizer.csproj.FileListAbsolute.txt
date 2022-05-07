@@ -89,3 +89,4 @@ D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\ru\Microsoft.ReportViewer.WinForms
 D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Proyectos\Farmacia\Pfizer\Pfizer\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Report.RerportComprobante.resources
+D:\Proyectos\Farmacia\Pfizer\Pfizer\obj\Debug\Pfizer.Ventas.IUListVentasSesion.resources
